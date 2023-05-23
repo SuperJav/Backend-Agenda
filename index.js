@@ -36,10 +36,10 @@ const persons={
     return maxId + 1
   }
 
-// funcion que retorna un saludo
-app.get("/",(request,response)=>{
-    response.send("<h1>Bienvenido</h1>")
-})
+// // funcion que retorna un saludo
+// app.get("/",(request,response)=>{
+//     response.send("<h1>Bienvenido</h1>")
+// })
 //funcion que retorna con todoslos contactos
 app.get("/api/persons/",(request,response)=>{
     response.send(persons)
