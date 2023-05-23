@@ -4,6 +4,7 @@ const app= express()
 const cours= require("cors")
 app.use(express.json())
 app.use(cours())
+app.use(express.static("build"))
 //app.use(morgan)
 
 console.log("Servidor esta corriendo ☆*: .｡. o(≧▽≦)o .｡.:*☆");
