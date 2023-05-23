@@ -1,13 +1,19 @@
 const express =require("express")
 const app= express()
 const cours= require("cors")
-
+const helmet = require('helmet');
 app.use(express.static('build'))
 app.use(express.json())
 app.use(cours())
 
 //app.use(morgan)
 
+
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    "font-src": ["'self'", "https://backend-agenda-lac.vercel.app/api/persons/"]
+  }
+}));
 
 
 const persons={
