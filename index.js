@@ -2,7 +2,7 @@ const express =require("express")
 const app= express()
 const cours= require("cors")
 
-app.use(express.static('./build'))
+app.use(express.static('build'))
 app.use(express.json())
 app.use(cours())
 
