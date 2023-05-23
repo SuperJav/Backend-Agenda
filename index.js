@@ -7,7 +7,7 @@ app.use(cours())
 app.use(express.static("./build"))
 //app.use(morgan)
 
-console.log("Servidor esta corriendo ☆*: .｡. o(≧▽≦)o .｡.:*☆");
+
 
 const persons={
     "persons": [
