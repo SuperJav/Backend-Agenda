@@ -122,7 +122,7 @@ app.put("/api/persons/:id",(request,response)=>{
 
 
 
-const PUERTO=process.env.PORT||3002
+const PUERTO=3001
 
 app.listen(PUERTO,()=>{
     console.log(`Servidor corriendo en el puerto ${PUERTO}`);
