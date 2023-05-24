@@ -43,7 +43,7 @@ const persons={
 //     response.send("<h1>Bienvenido</h1>")
 // })
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/build/index.html');
+    res.sendFile(`${__dirname}/build/index.html`);
   });
 
 //funcion que retorna con todoslos contactos
