@@ -5,7 +5,7 @@ const cours= require("cors")
 
 app.use(express.json())
 app.use(cours())
-app.use(express.static('build'))
+app.use(express.static('build'))//
 //app.use(morgan)
 
 
@@ -126,7 +126,7 @@ app.put("/api/persons/:id",(request,response)=>{
 
 
 
-const PUERTO=3000
+const PUERTO=3001
 
 app.listen(PUERTO,()=>{
     console.log(`Servidor corriendo en el puerto ${PUERTO}`);
