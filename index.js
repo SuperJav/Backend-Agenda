@@ -42,9 +42,9 @@ const persons={
 // app.get("/",(request,response)=>{
 //     response.send("<h1>Bienvenido</h1>")
 // })
-app.get('/', (req, res) => {
-    res.sendFile(`${__dirname}/build`);
-  });
+// app.get('/', (req, res) => {
+//     res.sendFile(`${__dirname}/build`);
+//   });
 
 //funcion que retorna con todoslos contactos
 app.get("/api/persons/",(request,response)=>{
