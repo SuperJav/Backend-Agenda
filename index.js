@@ -1,12 +1,12 @@
 const express =require("express")
 const app= express()
-const cours= require("cors")
+const cors= require("cors")
 require("dotenv").config()
 const mongoose=require("mongoose")
 const Person=require("./models/person")
 
 app.use(express.json())
-app.use(cours())
+app.use(cors())
  app.use(express.static('./build'))
 // //app.use(morgan)
 
@@ -35,13 +35,16 @@ app.get("/api/persons/:id",(request,response)=>{
   })
 })
 
-//funcion que tetorna informacion hacerca de cuantos contacto hay 
 app.get("/info",(request,response)=>{
-    const info={
-        time:new Date(),
-        total:`La agenda tiene información para ${persons.persons.length} personas`
-    }
-  response.send(`<h2>${info.total}</h2><h2>${info.time}</h2>`)
+  Person.countDocuments({}).then(count => {
+      const info={
+          time:new Date(),
+          total:`La agenda tiene información para ${count} personas`
+      }
+      response.send(`<h2>${info.total}</h2><h2>${info.time}</h2>`)
+  }).catch(error=>{
+      console.log(error);
+  })
 })
 
 //funcion que elimina un contacto 
