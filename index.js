@@ -13,10 +13,7 @@ app.use(cours())
 // Configurar el middleware para servir archivos estáticos
 app.use(express.static(path.join(__dirname, './build')));
 
-// Configurar las rutas de la aplicación
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './build', 'index.html'));
-});
+
 
 //funcion que retorna con todoslos contactos
 app.get("/api/persons/",(request,response)=>{
