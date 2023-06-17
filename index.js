@@ -7,11 +7,9 @@ const Person=require("./models/person")
 
 app.use(express.json())
 app.use(cours())
-// app.use(express.static('build'))
+ app.use(express.static('build'))
 // //app.use(morgan)
 
-// Configurar el middleware para servir archivos estáticos
-app.use(express.static(path.join(__dirname, './build')));
 
 
 
