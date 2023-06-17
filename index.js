@@ -11,11 +11,6 @@ app.use(cours())
 // //app.use(morgan)
 
 
-app.use((req, res, next) => {
-  res.setHeader('Content-Security-Policy', "font-src 'self' https://fonts.gstatic.com;");
-  next();
-});
-
 //funcion que retorna con todoslos contactos
 app.get("/api/persons/",(request,response)=>{
     Person.find({}).then(result=>{
