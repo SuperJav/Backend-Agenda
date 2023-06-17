@@ -7,7 +7,7 @@ const Person=require("./models/person")
 
 app.use(express.json())
 app.use(cours())
-app.use(express.static('./build'))
+app.use(express.static('build'))
 //app.use(morgan)
 
 
