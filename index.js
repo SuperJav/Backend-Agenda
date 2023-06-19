@@ -7,8 +7,7 @@ const Person=require("./models/person")
 
 app.use(express.json())
 app.use(cors())
- app.use(express.static('./build'))
-// //app.use(morgan)
+ app.use(express.static('build'))
 
 
 //funcion que retorna con todoslos contactos
