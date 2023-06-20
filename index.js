@@ -4,11 +4,16 @@ const cors= require("cors")
 require("dotenv").config()
 const mongoose=require("mongoose")
 const Person=require("./models/person")
+const path = require('path');
 
 app.use(express.json())
 app.use(cors())
- app.use(express.static('build'))
+ //app.use(express.static('build'))
+app.use(express.static(path.join(__dirname, 'build')));
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 //funcion que retorna con todoslos contactos
 app.get("/api/persons/",(request,response)=>{
@@ -32,7 +37,7 @@ app.get("/api/persons/:id",(request,response)=>{
     console.log(error);
     response.status(400).send({ error: 'malformatted id' })
     console.log(error);
-    console.log(error);
+ 
   })
 })
 
