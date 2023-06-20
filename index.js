@@ -32,6 +32,7 @@ app.get("/api/persons/:id",(request,response)=>{
     console.log(error);
     response.status(400).send({ error: 'malformatted id' })
     console.log(error);
+    console.log(error);
   })
 })
 
